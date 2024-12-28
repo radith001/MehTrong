@@ -1,1 +1,0 @@
-print("hay sobat metro")
