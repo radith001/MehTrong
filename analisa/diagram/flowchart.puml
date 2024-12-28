@@ -1,0 +1,37 @@
+@startuml
+title Flowchart Aplikasi Jual Beli Reptil
+
+start
+:Mulai;
+
+:User membuka aplikasi;
+if (User terdaftar sebagai Admin?) then (Ya)
+    :Tampilkan halaman Admin;
+    :Admin Login;
+    if (Login berhasil?) then (Ya)
+        :Akses fitur pengelolaan;
+        :Mengelola katalog reptil\n(menambah, mengedit, menghapus produk);
+        :Melihat dan mengelola data transaksi;
+        :Admin logout;
+    else (Tidak)
+        :Tampilkan pesan gagal login;
+        :Kembali ke halaman login;
+    endif
+else (Tidak)
+    :Tampilkan halaman Pembeli;
+    :Pembeli melihat katalog reptil;
+    if (Pembeli ingin membeli?) then (Ya)
+        :Pembeli memilih produk;
+        :Pembeli melakukan checkout;
+        :Pembeli menyelesaikan pembayaran;
+        :Transaksi selesai;
+    else (Tidak)
+        :Kembali ke halaman utama;
+    endif
+endif
+
+:User menutup aplikasi;
+stop
+
+@enduml
+   

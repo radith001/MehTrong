@@ -1,0 +1,14 @@
+@startuml
+
+actor "Admin" as Admin
+actor "Pembeli" as Pembeli
+
+usecase "Kelola Data Reptil" as KelolaReptil
+usecase "Lihat Katalog Reptil" as LihatKatalog
+
+Admin --> KelolaReptil : Mengelola Reptil
+Admin --> LihatKatalog : Melihat Katalog
+
+Pembeli --> LihatKatalog : Melihat Katalog
+
+@enduml
