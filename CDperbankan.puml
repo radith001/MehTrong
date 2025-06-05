@@ -1,0 +1,49 @@
+@startuml
+' Style
+skinparam classAttributeIconSize 0
+
+' Kelas utama
+class Bank {
+  - nama: String
+  - alamat: String
+  + bukaRekening(nasabah: Nasabah): Rekening
+  + tutupRekening(rekening: Rekening): void
+}
+
+class Nasabah {
+  - nama: String
+  - alamat: String
+  - noIdentitas: String
+  + bukaRekening(): Rekening
+  + tutupRekening(rekening: Rekening): void
+}
+
+class Rekening {
+  - noRekening: String
+  - saldo: double
+  + setor(tarik: double): void
+  + tarik(tarik: double): void
+  + cekSaldo(): double
+}
+
+class Transaksi {
+  - idTransaksi: String
+  - tanggal: Date
+  - jumlah: double
+  - jenis: String
+  + proses(): void
+}
+
+class KartuATM {
+  - noKartu: String
+  - pin: String
+  + verifikasi(pinInput: String): boolean
+}
+
+' Relasi
+Bank "1" -- "*" Rekening : mengelola
+Nasabah "1" -- "*" Rekening : memiliki
+Rekening "1" -- "*" Transaksi : mencatat
+Rekening "1" -- "1" KartuATM : memiliki
+
+@enduml

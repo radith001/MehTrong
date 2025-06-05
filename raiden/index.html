@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bubub</title>
+  <style>
+    :root {
+      --primary: #6333ae;
+      --accent: #aa7eee;
+      --text: #2d2d2d;
+      --soft-bg: #f7f5fc;
+      --white: #fff;
+      --purple: #aa7eee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--soft-bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--white);
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--purple);
+    }
+
+    .auth-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .auth-buttons .login {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--text);
+    }
+
+    .auth-buttons .signup {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    @keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #d5b2ff, #a288e3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  overflow: visible;
+  animation: fadeSlideIn 1s ease-out;
+}
+
+.hero .text {
+  max-width: 60%;
+  z-index: 2;
+  animation: fadeSlideIn 1.2s ease-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  color: #7b5cce;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero a:hover {
+  background-color: #7b5cce;
+  color: white;
+  transform: scale(1.05);
+}
+
+.hero img {
+  position: absolute;
+  right: 50px;
+  top: 43%;
+  transform: translateY(-50%);
+  height: 300px;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.hero img:hover {
+  transform: translateY(-50%) scale(1.05) rotate(-2deg);
+}
+
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px 40px 40px;
+      flex-wrap: wrap;
+    }
+
+    .section .artwork,
+    .section .search-section {
+      flex: 1;
+      margin: 20px;
+    }
+
+    .artwork h2,
+    .search-section h2 {
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .artwork img {
+      width: 120px;
+      border-radius: 15px;
+      margin-right: 10px;
+    }
+
+    .btn-view-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--white);
+      border: 2px solid var(--purple);
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--purple);
+    }
+
+    .search-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .search-item {
+      background-color: var(--primary);
+      padding: 10px 15px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .search-item img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .badges {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: #f0eaff;
+      font-weight: bold;
+      color: var(--purple);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Genshin</div>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="index.html" class="active">Search</a>
+    <a href="message.html">Message</a>
+  </nav>
+  <div class="auth-buttons">
+    <button class="login">Log in</button>
+    <button class="signup">Sign up</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="text">
+    <h1>Raiden Shogun</h1>
+    <p>She is the God of Eternity from Inazuma and the current Electro Archon</p>
+    <a href="#">Read More</a>
+  </div>
+  <img src="img/bububb.png" alt="Raiden Shogun">
+</div>
+
+<div class="section">
+  <div class="artwork">
+    <h2>Artwork ></h2>
+    <img src="img/peakpx (2).jpg" alt="Artwork 1">
+    <img src="img/peakpx (4).jpg" alt="Artwork 2">
+    <img src="img/peakpx.jpg" alt="Artwork 3">
+    <img src="img/1225641.jpg" alt="Artwork 4">
+    <br>
+    <a href="#" class="btn-view-more">View More</a>
+  </div>
+
+  <div class="search-section">
+    <h2>Recent Search</h2>
+    <div class="search-list">
+      <div class="search-item">
+        <img src="img/kacapembesar.png" alt="icon1"> Raiden shogun build
+      </div>
+      <div class="search-item">
+        <img src="img/kacapembesar.png" alt="icon2"> Raiden shogun wallpaper
+      </div>
+      <div class="search-item">
+        <img src="img/kacapembesar.png" alt="icon3"> Raiden shogun kayang
+      </div>
+    </div>
+    <div class="badges">
+      <div class="badge">Electro Character</div>
+      <div class="badge">Inazuma</div>
+      <div class="badge">Constellation</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

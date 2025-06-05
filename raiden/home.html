@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Raiden Fansite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-underline {
+      transition: left 0.3s ease, width 0.3s ease;
+    }
+    .fade-slide {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlide 0.6s ease-out forwards;
+    }
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-indigo-900 to-purple-900 min-h-screen text-white">
+
+  <!-- Navbar -->
+  <nav class="relative px-6 py-4 bg-indigo-800 shadow-lg">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Raiden Fansite</h1>
+      <ul class="flex space-x-6 text-lg font-semibold relative" id="navLinks">
+        <li><a href="home.html" class="nav-link text-purple-300">Home</a></li>
+        <li><a href="index.html" class="nav-link">Search</a></li>
+        <li><a href="message.html" class="nav-link">Message</a></li>
+        <div id="nav-underline" class="absolute bottom-0 h-1 bg-purple-300 nav-underline rounded-full"></div>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="flex flex-col items-center justify-center py-20 px-4 fade-slide">
+    <h2 class="text-5xl font-bold mb-6 text-center animate-pulse">Welcome to Raiden Home</h2>
+    <p class="max-w-xl text-lg text-center mb-6">Temukan semua info menarik tentang Raiden Shogun, termasuk lore, gameplay, dan event terbaru!</p>
+    <a href="#" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg font-semibold transition">Lihat Detail</a>
+  </main>
+
+  <script>
+    // Animate nav underline
+    const underline = document.getElementById('nav-underline');
+    const links = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+
+    function moveUnderline() {
+      links.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+          const rect = link.getBoundingClientRect();
+          const navRect = link.parentElement.parentElement.getBoundingClientRect();
+          underline.style.width = rect.width + 'px';
+          underline.style.left = (rect.left - navRect.left) + 'px';
+        }
+      });
+    }
+
+    window.addEventListener('load', moveUnderline);
+    window.addEventListener('resize', moveUnderline);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message | Raiden Fansite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-underline {
+      transition: left 0.3s ease, width 0.3s ease;
+    }
+    .fade-slide {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlide 0.6s ease-out forwards;
+    }
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .auth-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .auth-buttons .login {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--text);
+    }
+
+    .auth-buttons .signup {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .nav-radet{
+        background-color: white;
+        gap: 10px;
+    }
+
+/* ini bwda lagi yah */
+    :root {
+      --primary: #6333ae;
+      --accent: #aa7eee;
+      --text: #2d2d2d;
+      --soft-bg: #f7f5fc;
+      --white: #fff;
+      --purple: #aa7eee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--soft-bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--white);
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--purple);
+    }
+
+    .auth-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .auth-buttons .login {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--text);
+    }
+
+    .auth-buttons .signup {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .logo{
+        color: black;
+    }
+
+    @keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #d5b2ff, #a288e3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  overflow: visible;
+  animation: fadeSlideIn 1s ease-out;
+}
+
+.hero .text {
+  max-width: 60%;
+  z-index: 2;
+  animation: fadeSlideIn 1.2s ease-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  color: #7b5cce;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero a:hover {
+  background-color: #7b5cce;
+  color: white;
+  transform: scale(1.05);
+}
+
+.hero img {
+  position: absolute;
+  right: 50px;
+  top: 43%;
+  transform: translateY(-50%);
+  height: 300px;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.hero img:hover {
+  transform: translateY(-50%) scale(1.05) rotate(-2deg);
+}
+
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px 40px 40px;
+      flex-wrap: wrap;
+    }
+
+    .section .artwork,
+    .section .search-section {
+      flex: 1;
+      margin: 20px;
+    }
+
+    .artwork h2,
+    .search-section h2 {
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .artwork img {
+      width: 120px;
+      border-radius: 15px;
+      margin-right: 10px;
+    }
+
+    .btn-view-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--white);
+      border: 2px solid var(--purple);
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--purple);
+    }
+
+    .search-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .search-item {
+      background-color: var(--primary);
+      padding: 10px 15px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .search-item img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .badges {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: #f0eaff;
+      font-weight: bold;
+      color: var(--purple);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-purple-800 to-indigo-800 min-h-screen text-white">
+
+  <!-- Navbar -->
+  <nav class="relative px-6 py-4 bg-white shadow-lg ">
+    <div class="flex justify-between nav-radet">
+        <div class="logo">Genshin</div>
+      <ul class="flex space-x-6 text-lg font-semibold relative" id="navLinks">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="index.html" class="nav-link">Search</a></li>
+        <li><a href="message.html" class="nav-link text-indigo-300">Message</a></li>
+        <div id="nav-underline" class="absolute bottom-0 h-1 bg-indigo-300 nav-underline rounded-full"></div>
+      </ul>
+      <div class="auth-buttons">
+        <button class="login">Log in</button>
+        <button class="signup">Sign up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="flex flex-col items-center justify-center py-20 px-4 fade-slide">
+    <h2 class="text-4xl font-bold mb-6 text-center">Kirim Pesan untuk Raiden Lovers</h2>
+    <textarea class="w-full max-w-lg h-40 rounded-lg p-4 text-black shadow-inner" placeholder="Tulis pesanmu di sini..."></textarea>
+    <button class="mt-4 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-md font-semibold transition">Kirim</button>
+  </main>
+
+  <script>
+    const underline = document.getElementById('nav-underline');
+    const links = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+
+    function moveUnderline() {
+      links.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+          const rect = link.getBoundingClientRect();
+          const navRect = link.parentElement.parentElement.getBoundingClientRect();
+          underline.style.width = rect.width + 'px';
+          underline.style.left = (rect.left - navRect.left) + 'px';
+        }
+      });
+    }
+
+    window.addEventListener('load', moveUnderline);
+    window.addEventListener('resize', moveUnderline);
+  </script>
+
+</body>
+</html>

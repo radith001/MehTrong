@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS mahasiswa (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(100),
+  nim VARCHAR(20),
+  semester VARCHAR(10),
+  jurusan VARCHAR(100)
+);
